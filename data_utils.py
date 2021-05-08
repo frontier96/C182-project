@@ -178,6 +178,9 @@ def load_tiny_imagenet(path, dtype=np.float32, subtract_mean=True):
         img = skimage.io.imread(img_file)
         if img.ndim == 2:
             img.shape = (64, 64, 1)
+        ###
+        if i <10:
+        	print(img_file)
         X_test[i] = img.transpose(2, 0, 1)
 
     y_test = None
